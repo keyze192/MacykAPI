@@ -2,22 +2,22 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('user', views.user_list),
-    path('user/<int:pk>', views.user_detail),
+    path('user', views.UserList.as_view()),
+    path('user/<int:pk>', views.UserDetail.as_view()),
 
-    path('muscle_groups', views.muscle_group_list),
-    path('muscle_groups/<int:pk>', views.muscle_group_detail),
+    path('muscle_groups', views.MuscleGroupList.as_view()),
+    path('muscle_groups/<int:pk>', views.MuscleGroupDetail.as_view()),
 
-    path('exercises', views.exercise_list),
-    path('exercises/<int:pk>', views.exercise_detail),
+    path('exercises', views.ExerciseList.as_view()),
+    path('exercises/<int:pk>', views.ExerciseDetail.as_view()),
 
-    path('workouts', views.workout_list),
-    path('workouts/filter', views.workout_filter),
-    path('workouts/<int:pk>', views.workout_detail),
+    path('workouts', views.WorkoutList.as_view()),
+    path('workouts/filter', views.WorkoutFilter.as_view()),
+    path('workouts/<int:pk>', views.WorkoutDetail.as_view()),
 
-    path('sets', views.set_list),
-    path('sets/<int:pk>', views.set_detail),
+    path('sets', views.SetList.as_view()),
+    path('sets/<int:pk>', views.SetDetail.as_view()),
 
-    path('stats/regularity/all', views.stats_regularity_all),
-    path('stats/regularity/<int:muscle_id>', views.stats_regularity_muscle),
+    path('stats/regularity/all', views.StatsRegularityAll.as_view()),
+    path('stats/regularity/<int:muscle_id>', views.StatsRegularityMuscle.as_view()),
 ]
